@@ -30,7 +30,7 @@ class DumperInterface
   # This default makes sense in simple cases, override for advanced custom logic
   def msg_fresh?(msg, progress)
     # msg: Hash, progress: DumpProgress
-    !progress.last_id || msg['id'] > progress.last_id
+    !progress.last_date || msg['date'] > progress.last_date
   end
 
   # Will be called for each message to dump (from newest to oldest)
