@@ -120,7 +120,7 @@ class HtmlFormatter < FormatterBase
           end
           if filetype == 'audio' or filetype == 'video'
             msg_body = "<#{filetype} src='#{relative_url}' controls"
-            if $config['formatters']['html']['loop_video']
+            if $config['formatters']['html']['loop_video'] && filetype == 'video'
               msg_body += " loop autoplay"
             end
             msg_body += ">Your browser does not support inline playback.</#{filetype}><br><a href='#{relative_url}'>Download #{filetype}</a>"
